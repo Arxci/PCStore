@@ -21,6 +21,7 @@ import {
 import { useLocation } from "react-router-dom";
 
 import { Icons } from "../../icons";
+import { CartButton } from "../../ui/cart-button";
 
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
@@ -85,9 +86,7 @@ const SiteHeader = () => {
       </NavbarContent>
       <NavbarContent justify="end" className=" ">
         <SearchInput className="hidden lg:flex" />
-        <Button isIconOnly variant="faded" href="#">
-          <Icons.cart className="text-success" />
-        </Button>
+        <CartButton />
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>
@@ -125,7 +124,7 @@ const SearchInput = ({ className }: { className?: string }) => {
   };
 
   return (
-    <form className="w-full sm:max-w-[20rem]">
+    <form className="w-full sm:max-w-[20rem] ">
       <label htmlFor="search" className="sr-only">
         Search for a course
       </label>
@@ -135,7 +134,7 @@ const SearchInput = ({ className }: { className?: string }) => {
           mainWrapper: "h-full",
           input: "text-small",
           inputWrapper:
-            "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+            "h-full font-normal text-default-500 bg-default-100/80 dark:bg-default-100/80 border-default-200 border-medium ",
         }}
         placeholder="Type to search..."
         size="sm"

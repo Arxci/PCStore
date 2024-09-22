@@ -7,6 +7,8 @@ import {
   Button,
 } from "@nextui-org/react";
 
+import { useCartStore } from "../../store/cart-store";
+
 export interface ProductCardInterface {
   id: number;
   title: string;
@@ -18,6 +20,7 @@ export interface ProductCardInterface {
 }
 
 const ProductCard: React.FC<ProductCardInterface> = ({
+  id,
   title,
   image,
   description,
@@ -25,6 +28,21 @@ const ProductCard: React.FC<ProductCardInterface> = ({
   rating,
   totalReviews,
 }) => {
+  const { addToCart } = useCartStore();
+
+  const addToCartHandler = () => {
+    addToCart({
+      id,
+      title,
+      image,
+      description,
+      price,
+      rating,
+      totalReviews,
+      quantity: 1,
+    });
+  };
+
   return (
     <Card className="h-full">
       <CardHeader className="flex items-center justify-center">
@@ -49,7 +67,12 @@ const ProductCard: React.FC<ProductCardInterface> = ({
         <ProductReviews totalReviews={totalReviews} rating={rating} />
       </CardBody>
       <CardFooter className="px-6">
-        <Button color="success" variant="flat" fullWidth>
+        <Button
+          color="success"
+          variant="flat"
+          fullWidth
+          onClick={addToCartHandler}
+        >
           Add to Cart
         </Button>
       </CardFooter>
