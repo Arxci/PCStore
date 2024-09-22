@@ -1,0 +1,58 @@
+{
+    "featured": [
+        {
+            "id": 0,
+            "title": "Player: One",
+            "image": "https://nzxt.com/assets/cms/34299/1709194939-player-1-base-ww-02-26-24-hero-white-badge.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H5 Flow Gaming PC with RTX 3050 or RTX 4060 GPU",
+            "price": 829.00,
+            "rating": 4.7,
+            "totalReviews": 756
+        },
+        {
+            "id": 1,
+            "title": "Player: Two",
+            "image": "https://nzxt.com/assets/cms/34299/1712131826-player-two-base-ww-03-22-24-hero-white-badge.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H6 Flow RTX 4070 Gaming PC",
+            "price": 1599.00,
+            "rating": 4.6,
+            "totalReviews": 380
+        },
+        {
+            "id": 2,
+            "title": "Player: Three",
+            "image": "https://nzxt.com/assets/cms/34299/1721894866-player-three-base-ww-05-29-24-hero-white-badge.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H7 Elite RTX 4070 Ti SUPER Gaming PC",
+            "price": 2299.00,
+            "rating": 4.7,
+            "totalReviews": 161
+        },
+        {
+            "id": 3,
+            "title": "Player: One Prime",
+            "image": "https://nzxt.com/assets/cms/34299/1719866668-player-one-prime-ww-05-29-24-hero-white-badge.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H6 Flow RGB RTX 4060 Ti Gaming PC",
+            "price": 1249.00,
+            "rating": 4.7,
+            "totalReviews": 484
+        },
+        {
+            "id": 4,
+            "title": "Player: Two Prime",
+            "image": "https://nzxt.com/assets/cms/34299/1723434407-player-two-prime-ww-08-02-24-hero-white-badge.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H7 Flow RGB RTX 4070 Ti SUPER Gaming PC",
+            "price": 2099.00,
+            "rating": 4.6,
+            "totalReviews": 359
+        },
+        {
+            "id": 5,
+            "title": "Player: Three Prime",
+            "image": "https://nzxt.com/assets/cms/34299/1721900215-player-three-prime-ww-07-10-24-hero-white-badge-1.png?ar64=MTox&auto=format&fit=crop&h=400&w=400",
+            "description": "H9 Elite RTX 4090 Gaming PC",
+            "price": 3699.00,
+            "rating": 4.5,
+            "totalReviews": 182
+        }
+    ]
+}
