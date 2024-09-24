@@ -1,10 +1,11 @@
-import { Badge, Button } from "@nextui-org/react";
+import { useEffect, useState } from "react";
+
+import { Button } from "@nextui-org/react";
 import { motion, useAnimation } from "framer-motion";
 
 import { Icons } from "../icons";
 
 import { useCartStore } from "../../store/cart-store";
-import { useEffect, useState } from "react";
 
 const CartButton = () => {
   const { cart, totalQuantity } = useCartStore();

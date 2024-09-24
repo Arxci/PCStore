@@ -2,7 +2,7 @@ import { NextUIProvider } from "@nextui-org/react";
 
 import { Outlet, useHref, useNavigate } from "react-router-dom";
 
-import { SiteHeader } from "./components/layout/navigation/site-header";
+import { SiteHeader } from "./components/layout/header/site-header";
 
 function App() {
   const navigate = useNavigate();
