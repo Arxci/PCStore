@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import { motion, useAnimation } from "framer-motion";
 
 import { Icons } from "../icons";
@@ -25,7 +25,7 @@ const CartButton = () => {
 
   return (
     <div className="relative">
-      <Button isIconOnly variant="faded" href="#" className=" z-10">
+      <Button as={Link} isIconOnly variant="faded" href="#" className=" z-10">
         <Icons.cart className="text-success" />
         <span className="sr-only">Add to cart</span>
       </Button>

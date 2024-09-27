@@ -32,10 +32,7 @@ const MegaMenu = ({
       <PopoverContent aria-label="Categories" className="w-auto px-6 py-4">
         <ul className="flex flex-row gap-4">
           {categories?.map((category) => (
-            <li
-              className="text-nowrap w-[200px]"
-              key={`mega-menu-${category.label}-${category.id}`}
-            >
+            <MegaMenuSection key={`mega-menu-${category.label}-${category.id}`}>
               <Link
                 href={category.href}
                 className="flex items-center group hover:bg-default-100 p-1.5 rounded-md hover:border-default-200 border-medium border-transparent transition-colors hover:text-success "
@@ -50,31 +47,50 @@ const MegaMenu = ({
               <Divider className="my-1.5" />
               <ul className="flex flex-col">
                 {category?.subLinks?.map((link) => (
-                  <li
+                  <MegaMenuLink
                     key={`mega-menu-${category.label}-${category.id}-${link.id}`}
-                  >
-                    <Link
-                      color="foreground"
-                      href={link.href}
-                      className={
-                        "flex flex-col space-y-1 items-start group hover:bg-default-100 p-1.5 rounded-md transition-colors hover:border-default-200 border-medium border-transparent"
-                      }
-                    >
-                      <span className="group-hover:text-success">
-                        {link.label}
-                      </span>
-                      <span className="text-tiny text-foreground-500 text-wrap">
-                        {link.description}
-                      </span>
-                    </Link>
-                  </li>
+                    href={link.href}
+                    label={link.label}
+                    description={link.description || ""}
+                  />
                 ))}
               </ul>
-            </li>
+            </MegaMenuSection>
           ))}
         </ul>
       </PopoverContent>
     </Popover>
+  );
+};
+
+const MegaMenuSection = ({ children }: { children: React.ReactNode }) => {
+  return <li className="text-nowrap w-[200px]">{children}</li>;
+};
+
+const MegaMenuLink = ({
+  href,
+  label,
+  description,
+}: {
+  href: string;
+  label: string;
+  description: string;
+}) => {
+  return (
+    <li>
+      <Link
+        color="foreground"
+        href={href}
+        className={
+          "flex flex-col space-y-1 items-start group hover:bg-default-100 p-1.5 rounded-md transition-colors hover:border-default-200 border-medium border-transparent"
+        }
+      >
+        <span className="group-hover:text-success">{label}</span>
+        <span className="text-tiny text-foreground-500 text-wrap">
+          {description}
+        </span>
+      </Link>
+    </li>
   );
 };
 

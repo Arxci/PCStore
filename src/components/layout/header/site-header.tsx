@@ -37,6 +37,7 @@ const SiteHeader = () => {
   return (
     <Navbar
       isBordered
+      isBlurred={false}
       classNames={{
         wrapper: "max-w-[1200px]",
         item: [
@@ -93,6 +94,7 @@ const SiteHeader = () => {
                 color={
                   location.pathname === link.href ? "success" : "foreground"
                 }
+                className="rounded-small"
               >
                 {link.label}
               </Link>
@@ -104,7 +106,9 @@ const SiteHeader = () => {
         <SearchInput className="hidden lg:flex" />
         <CartButton />
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="#" className="rounded-small">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Button as={Link} color="success" href="#" variant="flat">

@@ -5,10 +5,13 @@ import { Tabs, Tab } from "@nextui-org/react";
 
 import { PageSection } from "../../../layout/page-section";
 import { Icons } from "../../../icons";
-import { ProductCard, ProductCardInterface } from "../../../ui/product-card";
+import { ProductCard } from "../../../ui/cards/product-card";
+import { ProductCardLoading } from "../../../ui/loading/product-card-loading";
+
+import { ProductCardInterface } from "../../../../types/types";
 
 import showcaseData from "../../../../data/home-showcase.json";
-import { ProductCardLoading } from "../../../ui/loading/product-card-loading";
+import { PageHeader } from "../../../layout/page-header";
 
 const HomeShowcase = () => {
   const [selectedTab, setSelectedTab] = useState<Key>(0);
@@ -26,14 +29,10 @@ const HomeShowcase = () => {
   return (
     <div className="bg-foreground-200 dark:bg-foreground-50 min-h-96">
       <PageSection className="text-center">
-        <div>
-          <h2 className="text-4xl sm:text-5xl pt-10 mb-3 font-medium">
-            Prebuilts You Can Modify
-          </h2>
-          <p className="text-foreground-800 dark:text-foreground-500 text-medium">
-            Pick your gaming PC and upgrade your parts
-          </p>
-        </div>
+        <PageHeader
+          heading="Prebuilts You Can Modify"
+          subHeading="Pick your gaming PC and upgrade your parts"
+        />
         <Tabs
           aria-label="View Products"
           color="success"

@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { ProductCardInterface } from "../components/ui/product-card";
 
-interface CartType extends ProductCardInterface {
+interface CartType {
+  id: number;
   quantity: number;
 }
 

@@ -14,6 +14,10 @@ import {
   CirclePlus,
   TrendingUp,
   Award,
+  Star,
+  Gamepad2,
+  Headset,
+  WandSparkles,
 } from "lucide-react";
 
 import { cn } from "../lib/utils";
@@ -69,5 +73,17 @@ export const Icons = {
   ),
   award: (props: IconProps) => (
     <Award {...props} className={cn(defaultStyle, props.className)} />
+  ),
+  star: (props: IconProps) => (
+    <Star {...props} className={cn(defaultStyle, props.className)} />
+  ),
+  gamepad: (props: IconProps) => (
+    <Gamepad2 {...props} className={cn(defaultStyle, props.className)} />
+  ),
+  headset: (props: IconProps) => (
+    <Headset {...props} className={cn(defaultStyle, props.className)} />
+  ),
+  wand: (props: IconProps) => (
+    <WandSparkles {...props} className={cn(defaultStyle, props.className)} />
   ),
 };

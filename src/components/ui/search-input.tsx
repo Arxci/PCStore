@@ -27,7 +27,7 @@ const SearchInput = ({ className }: { className?: string }) => {
   };
 
   return (
-    <form className="w-full sm:max-w-[20rem] ">
+    <form className="w-full sm:max-w-[20rem]">
       <label htmlFor="search" className="sr-only">
         Search for a course
       </label>
@@ -37,7 +37,7 @@ const SearchInput = ({ className }: { className?: string }) => {
           mainWrapper: "h-full",
           input: "text-small",
           inputWrapper:
-            "h-full font-normal text-default-500 bg-default-100/80 dark:bg-default-100/80 border-default-200 border-medium ",
+            "h-full font-normal text-default-500 bg-default-100 data-[hover=true]:opacity-[0.9] data-[hover=true]:bg-default-100 box-border border-medium border-default !transition-opacity !duration-[250ms] !ease",
         }}
         placeholder="Type to search..."
         size="sm"
@@ -55,7 +55,7 @@ const SearchInput = ({ className }: { className?: string }) => {
           </Button>
         }
         endContent={
-          <div className="w-8 h-8 flex justify-center items-center">
+          <div className="w-8 h-8 flex justify-center items-center ">
             <Icons.search />
           </div>
         }
