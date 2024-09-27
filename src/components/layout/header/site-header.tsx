@@ -29,6 +29,7 @@ import { siteConfig } from "../../../config/site";
 import { cn } from "../../../lib/utils";
 import { SearchInput } from "../../ui/search-input";
 import { MegaMenu } from "../../ui/navigation/mega-menu";
+import { ThemeToggle } from "../../ui/theme-toggle";
 
 const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,8 +103,9 @@ const SiteHeader = () => {
           )
         )}
       </NavbarContent>
-      <NavbarContent justify="end" className=" ">
+      <NavbarContent justify="end" className="gap-2 md:gap-4">
         <SearchInput className="hidden lg:flex" />
+        <ThemeToggle />
         <CartButton />
         <NavbarItem className="hidden lg:flex">
           <Link href="#" className="rounded-small">
