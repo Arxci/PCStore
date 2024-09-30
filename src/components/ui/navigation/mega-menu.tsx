@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 
 import { Icons } from "../../icons";
 
-import useWindowDimensions from "../../../lib/hooks/useWindowDimensions";
+import useWindowDimensions, {
+  WindowSize,
+} from "../../../lib/hooks/useWindowDimensions";
 
 import { SiteHeaderType } from "../../../types/types";
 import { cn } from "../../../lib/utils";
@@ -42,9 +44,12 @@ const MegaMenu = ({ categories, children }: MegaMenuProps) => {
 
   const memoizedCategories = useMemo(() => categories, [categories]);
 
-  useWindowDimensions(() => {
-    setIsMenuOpen(false);
-  });
+  useWindowDimensions(
+    useCallback((size: WindowSize) => {
+      setIsMenuOpen(false);
+    }, []),
+    100
+  );
 
   const calculateHoverPosition = (position: {
     top: number;
