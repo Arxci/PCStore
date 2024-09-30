@@ -7,11 +7,12 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import { useCartStore } from "../../../store/cart-store";
-import { ProductCardInterface } from "../../../types/types";
-import { Icons } from "../../icons";
+import { Reviews } from "../reviews";
 
-const ProductCard: React.FC<ProductCardInterface> = ({
+import { useCartStore } from "../../../store/cart-store";
+import { ProductCardType } from "../../../types/types";
+
+const ProductCard: React.FC<ProductCardType> = ({
   id,
   title,
   image,
@@ -50,7 +51,7 @@ const ProductCard: React.FC<ProductCardInterface> = ({
           <span className="ml-auto text-foreground-500">{`$${price}.00`}</span>
         </div>
         <p className="text-foreground-500 pb-2 line-clamp-2">{description}</p>
-        <ProductReviews totalReviews={totalReviews} rating={rating} />
+        <Reviews totalReviews={totalReviews} rating={rating} />
       </CardBody>
       <CardFooter className="px-6">
         <Button
@@ -67,31 +68,3 @@ const ProductCard: React.FC<ProductCardInterface> = ({
 };
 
 export { ProductCard };
-
-const ProductReviews = ({
-  totalReviews,
-  rating,
-}: {
-  totalReviews: number;
-  rating: number;
-}) => {
-  return (
-    <div className="flex items-center">
-      <ul className="flex items-center">
-        {Array(5)
-          .fill(0)
-          .map((_, index) => (
-            <li key={index}>
-              {index + 1 < rating ? (
-                <Icons.star className="fill-yellow-500 text-yellow-500" />
-              ) : (
-                <Icons.star className="fill-default-200 text-default-200" />
-              )}
-            </li>
-          ))}
-      </ul>
-      <p className="pl-2 pr-1 text-foreground-500 text-small">4.7</p>
-      <span className="text-foreground-500 text-small">({totalReviews})</span>
-    </div>
-  );
-};

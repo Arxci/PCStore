@@ -5,9 +5,9 @@ const FeatureCard = ({
   body,
   footer,
 }: {
-  heading?: React.ReactNode;
-  body?: React.ReactNode;
-  footer?: React.ReactNode;
+  heading?: React.ReactNode | JSX.Element;
+  body?: React.ReactNode | JSX.Element;
+  footer?: React.ReactNode | JSX.Element;
 }) => {
   return (
     <Card className="flex flex-col items-center p-10 h-full">

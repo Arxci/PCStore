@@ -7,11 +7,11 @@ import { PageSection } from "../../../layout/page-section";
 import { Icons } from "../../../icons";
 import { ProductCard } from "../../../ui/cards/product-card";
 import { ProductCardLoading } from "../../../ui/loading/product-card-loading";
+import { PageHeader } from "../../../layout/page-header";
 
-import { ProductCardInterface } from "../../../../types/types";
+import { ProductCardType } from "../../../../types/types";
 
 import showcaseData from "../../../../data/home-showcase.json";
-import { PageHeader } from "../../../layout/page-header";
 
 const HomeShowcase = () => {
   const [selectedTab, setSelectedTab] = useState<Key>(0);
@@ -78,11 +78,11 @@ const ProductList = ({
   data,
   isLoading,
 }: {
-  data: ProductCardInterface[];
+  data: ProductCardType[];
   isLoading: boolean;
 }) => {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {isLoading
         ? Array(6)
             .fill(0)

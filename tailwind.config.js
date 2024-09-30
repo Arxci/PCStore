@@ -26,7 +26,7 @@ module.exports = {
         colors: {
           primary: {
             DEFAULT: "#17C964",
-            foreground: "#7c964"
+            foreground: "#7C964"
           }
         },
       },
@@ -34,7 +34,7 @@ module.exports = {
         colors: {
           primary: {
             DEFAULT: "#17C964",
-            foreground: "#7c964"
+            foreground: "#7C964"
           }
         },
       },

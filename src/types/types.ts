@@ -7,7 +7,7 @@ export type SiteHeaderType = {
   subLinks?: SiteHeaderType[];
 };
 
-export type ProductCardInterface = {
+export type ProductCardType = {
   id: number;
   title: string;
   image: string;
@@ -15,4 +15,12 @@ export type ProductCardInterface = {
   price: number;
   rating: number;
   totalReviews: number;
+};
+
+export type BundleCardType = {
+  image: string;
+  heading: string;
+  subHeading: string;
+  href: string;
+  ctaLabel: string;
 };

@@ -4,19 +4,22 @@ import { Outlet, useHref, useNavigate } from "react-router-dom";
 
 import { SiteHeader } from "./components/layout/header/site-header";
 import { ThemesProvider } from "./lib/themes-provider";
+import { SiteFooter } from "./components/layout/footer/site-footer";
 
 function App() {
   const navigate = useNavigate();
 
   return (
-    <main>
-      <ThemesProvider>
-        <NextUIProvider navigate={navigate} useHref={useHref}>
-          <SiteHeader />
+    <ThemesProvider>
+      <NextUIProvider navigate={navigate} useHref={useHref}>
+        <SiteHeader />
+        <main>
           <Outlet />
-        </NextUIProvider>
-      </ThemesProvider>
-    </main>
+        </main>
+
+        <SiteFooter />
+      </NextUIProvider>
+    </ThemesProvider>
   );
 }
 
