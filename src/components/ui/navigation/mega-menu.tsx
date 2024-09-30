@@ -41,6 +41,7 @@ const MegaMenu = ({ categories, children }: MegaMenuProps) => {
     height: number;
   } | null>(null);
   const parentElement = useRef<HTMLDivElement | null>(null);
+  const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const memoizedCategories = useMemo(() => categories, [categories]);
 
@@ -74,15 +75,26 @@ const MegaMenu = ({ categories, children }: MegaMenuProps) => {
       width: number;
       height: number;
     }) => {
-      setHoverPosition(calculateHoverPosition(position));
+      const newHoverPosition = calculateHoverPosition(position);
+
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+
+      debounceTimeoutRef.current = setTimeout(() => {
+        setHoverPosition(newHoverPosition);
+      }, 100);
     },
     []
   );
 
   const openHandle = (isOpen: boolean) => {
-    if (!isOpen) {
-      setHoverPosition(null);
+    setHoverPosition(null);
+
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
     }
+
     setIsMenuOpen(isOpen);
   };
 
@@ -136,7 +148,12 @@ const MegaMenu = ({ categories, children }: MegaMenuProps) => {
                 height: hoverPosition.height,
                 zIndex: 0,
               }}
-              transition={{ duration: 0.3 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.2,
+                scale: { duration: 0.1 },
+              }}
             />
           )}
         </div>
@@ -167,13 +184,7 @@ const MenuItem = ({
       height: rect.height,
     };
 
-    if (debounceTimeoutRef.current) {
-      clearTimeout(debounceTimeoutRef.current);
-    }
-
-    debounceTimeoutRef.current = setTimeout(() => {
-      onHover(position);
-    }, 100);
+    onHover(position);
   };
 
   const handleMouseLeave = (e: MouseEvent) => {

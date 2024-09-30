@@ -74,8 +74,9 @@ const SiteHeader = () => {
                 <PopoverTrigger>
                   <Button
                     disableRipple
-                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent gap-1"
                     radius="sm"
+                    size="lg"
                     variant="light"
                     endContent={<Icons.chevronDown />}
                   >
